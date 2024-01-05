@@ -4,8 +4,8 @@
 
 <instance-profile id="section_0"
                  name="section_0"
-                 start-page="starter-topic.md">
+                 start-page="asasas.md">
 
-    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="asasas.md"/>
     <toc-element topic="Empty-MD-Topic.md"/>
 </instance-profile>

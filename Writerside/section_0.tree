@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="section_0"
-                 name="section_0"
+                 name="한국말도된다"
                  start-page="asasas.md">
 
     <toc-element topic="asasas.md"/>

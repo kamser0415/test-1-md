@@ -7,4 +7,5 @@
                  start-page="section-1.md">
 
     <toc-element topic="section-1.md"/>
+    <toc-element topic="into.md"/>
 </instance-profile>

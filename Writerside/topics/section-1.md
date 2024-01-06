@@ -1,3 +1,0 @@
-# About section_1
-
-Start typing here...

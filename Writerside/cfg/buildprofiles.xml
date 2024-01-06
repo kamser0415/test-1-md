@@ -9,7 +9,9 @@
         </variables>
     </build-profile>
     <build-profile instance="section_1">
-        <variables></variables>
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
     </build-profile>
 
 </buildprofiles>

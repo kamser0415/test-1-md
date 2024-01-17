@@ -34,4 +34,20 @@
         <description>Created after removal of "Empty MD Topic" from 단위테스트</description>
         <accepts>Empty-MD-Topic.html</accepts>
     </rule>
+    <rule id="71deb195">
+        <description><![CDATA[Created after removal of "샘플" from Spring&JPA기반-테스트]]></description>
+        <accepts>샘플.html</accepts>
+    </rule>
+    <rule id="14a643d3">
+        <description><![CDATA[Created after removal of "테스트를 작성하는 마음가짐" from Spring&JPA기반-테스트]]></description>
+        <accepts>09-Outro.html</accepts>
+    </rule>
+    <rule id="67f8aa3a">
+        <description>Created after removal of "About Study" from Study</description>
+        <accepts>study.html</accepts>
+    </rule>
+    <rule id="49c8e713">
+        <description>Created after removal of "Reference" from Study</description>
+        <accepts>Reference.html</accepts>
+    </rule>
 </rules>

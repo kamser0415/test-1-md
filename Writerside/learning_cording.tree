@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="learning_cording"
+                 name="Study"
+                 start-page="intro1.md">
+
+    <toc-element topic="TestCode.md">
+        <toc-element topic="Practical-Testing.md">
+            <toc-element topic="11-키워드-정리.md"/>
+            <toc-element topic="intro2.md">
+                <toc-element topic="intro1.md"/>
+            </toc-element>
+            <toc-element topic="테스트는-왜-필요할까.md">
+                <toc-element topic="0-test-need-md1.md"/>
+            </toc-element>
+            <toc-element topic="단위테스트2.md">
+                <toc-element topic="단위테스트1.md"/>
+                <toc-element topic="Junit로-테스트하기1.md"/>
+                <toc-element topic="테스트케이스세분화하기1.md"/>
+                <toc-element topic="중요-테스트하기-어려운-영역을-분리하기1.md"/>
+                <toc-element topic="키워드정리1.md"/>
+            </toc-element>
+            <toc-element topic="TDD.md">
+                <toc-element topic="testdrivendevelopment1.md"/>
+                <toc-element topic="키워드-정리1.md"/>
+            </toc-element>
+            <toc-element topic="테스트는-다2.md">
+                <toc-element topic="BDD-키워드-정리1.md"/>
+                <toc-element topic="BDD-스타일로-작성하기1.md"/>
+                <toc-element topic="2-DisplayName을섬세하게1.md"/>
+                <toc-element topic="테스트는-다1.md"/>
+            </toc-element>
+            <toc-element topic="01-학습-테스트1.md"/>
+            <toc-element topic="01-한-문단에-한-주제1.md"/>
+            <toc-element topic="02-API-문서-작성-도구1.md"/>
+            <toc-element topic="02-완벽하게-제어하기1.md"/>
+            <toc-element topic="03-테스트-환경의-독립성을-보장하자1.md"/>
+            <toc-element topic="04-테스트-간-독립성을-보장하자1.md"/>
+            <toc-element topic="05-한-눈에-들어오는-Test-Fixture-구성하기1.md"/>
+            <toc-element topic="06-Test-Fixture-클렌징1.md"/>
+            <toc-element topic="08-테스트-환경-통합하기1.md"/>
+            <toc-element topic="09-private-테스트1.md"/>
+            <toc-element topic="1-PersistenceLayerTest1.md"/>
+            <toc-element topic="1-Spring-JPA-훑어보기-기본엔티티설계1.md"/>
+            <toc-element topic="10-프로덕션에필요없는메서드1.md"/>
+            <toc-element topic="11-키워드-정리1.md"/>
+            <toc-element topic="appendix-03-SpringRestDocs1.md"/>
+            <toc-element topic="Appendix1.md"/>
+            <toc-element topic="BDDMockito1.md"/>
+            <toc-element topic="BusinessLayerTest1.md"/>
+            <toc-element topic="Classicist-Vs-Mockist1.md"/>
+            <toc-element topic="DynamicTest1.md"/>
+            <toc-element topic="Final1.md"/>
+            <toc-element topic="Mock-Spy-InjectMocks1.md"/>
+            <toc-element topic="Mock-정리1.md"/>
+            <toc-element topic="Mockito로-Subbing하기1.md"/>
+            <toc-element topic="Mock을-마주하는-자세1.md"/>
+            <toc-element topic="ParameterizedTest1.md"/>
+            <toc-element topic="PresentationLayerTest1.md"/>
+            <toc-element topic="Product도메인부터컨트롤러까지1.md"/>
+            <toc-element topic="spring-jpa기반-테스트1.md"/>
+            <toc-element topic="study1.md"/>
+            <toc-element topic="Test-Double1.md"/>
+            <toc-element topic="더-나은-테스트를-작성하기-위한-구체적-조언1.md"/>
+            <toc-element topic="테스트-정리1.md"/>
+        </toc-element>
+        <toc-element topic="TDD-Order.md"/>
+    </toc-element>
+</instance-profile>

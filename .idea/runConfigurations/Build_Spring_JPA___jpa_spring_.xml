@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Build Spring&amp;JPA기반-테스트 (jpa-spring)" type="StardustRunConfiguration" factoryName="save-as-zip" editBeforeRun="true" focusToolWindowBeforeRun="true">
+    <option name="folderPath" value="$PROJECT_DIR$/../../../../git/githup-io/kamser0415.github.io" />
+    <option name="instanceId" value="jpa-spring" />
+    <option name="instanceName" value="Spring&amp;JPA기반-테스트" />
+    <method v="2" />
+  </configuration>
+</component>

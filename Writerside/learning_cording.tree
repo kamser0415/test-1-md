@@ -66,6 +66,10 @@
             <toc-element topic="더-나은-테스트를-작성하기-위한-구체적-조언1.md"/>
             <toc-element topic="테스트-정리1.md"/>
         </toc-element>
-        <toc-element topic="TDD-Order.md"/>
+        <toc-element topic="TDD-Order.md">
+            <toc-element topic="sc1-상품등록-api-개발.md">
+                <toc-element topic="test_tddorder_sc1-01-pojo-상품-등록-기능-구현하기.md"/>
+            </toc-element>
+        </toc-element>
     </toc-element>
 </instance-profile>

@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Build Study (learning_cording)" type="StardustRunConfiguration" factoryName="save-as-zip">
+    <option name="folderPath" value="$PROJECT_DIR$/../../../../git/githup-io/kamser0415.github.io" />
+    <option name="instanceId" value="learning_cording" />
+    <option name="instanceName" value="Study" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="jpa-spring"
-                 name="Spring&JPA기반-테스트"
+                 name="Spring-JPA기반-테스트"
                  start-page="spring-jpa기반-테스트.md">
 
     <toc-element topic="spring-jpa기반-테스트.md"/>

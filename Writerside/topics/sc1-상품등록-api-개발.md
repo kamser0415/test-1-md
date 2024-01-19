@@ -1,3 +1,0 @@
-# sc1_상품등록 api 개발
-
-Start typing here...

@@ -70,6 +70,8 @@
             <toc-element topic="test_tddorder_sc1-01-pojo-상품-등록-기능-구현하기.md"/>
             <toc-element topic="test_tddorder_sc1-02-API-테스트로-전환하기.md"/>
             <toc-element topic="test-tddorder-sc1-03-JPA-적용하기-md.md"/>
+            <toc-element topic="test-tddorder-sc2-01-상품-조회-기능-구현하기.md"/>
+            <toc-element topic="test-tddorder-sc3-01-POJO-상품-수정-기능-구현하기.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>

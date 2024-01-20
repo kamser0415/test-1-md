@@ -50,4 +50,8 @@
         <description>Created after removal of "Reference" from Study</description>
         <accepts>Reference.html</accepts>
     </rule>
+    <rule id="7fa3caf5">
+        <description>Created after removal of "test-tddorder-sc2-02-상품-조회-기능-API로-전환하기" from Study</description>
+        <accepts>test-tddorder-sc2-02-상품-조회-기능-API로-전환하기.html</accepts>
+    </rule>
 </rules>

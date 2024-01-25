@@ -54,4 +54,8 @@
         <description>Created after removal of "test-tddorder-sc2-02-상품-조회-기능-API로-전환하기" from Study</description>
         <accepts>test-tddorder-sc2-02-상품-조회-기능-API로-전환하기.html</accepts>
     </rule>
+    <rule id="2317c503">
+        <description>Created after removal of "test-tddorder-sc4-02-boot-api-주문-생성.md" from Study</description>
+        <accepts>test-tddorder-sc4-02-boot-api-주문-생성-md.html</accepts>
+    </rule>
 </rules>

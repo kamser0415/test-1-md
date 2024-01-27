@@ -58,4 +58,8 @@
         <description>Created after removal of "test-tddorder-sc4-02-boot-api-주문-생성.md" from Study</description>
         <accepts>test-tddorder-sc4-02-boot-api-주문-생성-md.html</accepts>
     </rule>
+    <rule id="3c04a847">
+        <description>Created after removal of "apter_01_warterfallVsAgile" from Study</description>
+        <accepts>chapter-01-warterfallVsAgile.html</accepts>
+    </rule>
 </rules>

@@ -76,4 +76,10 @@
             <toc-element topic="test-tddorder-sc4-01-POJO-상품-주문-구현-md.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="CI-CD.md">
+        <toc-element topic="Jenkins.md">
+            <toc-element topic="section-01-DevOps와CI-CD의이해.md">
+            </toc-element>
+        </toc-element>
+    </toc-element>
 </instance-profile>

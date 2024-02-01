@@ -62,4 +62,8 @@
         <description>Created after removal of "apter_01_warterfallVsAgile" from Study</description>
         <accepts>chapter-01-warterfallVsAgile.html</accepts>
     </rule>
+    <rule id="6f90359d">
+        <description>Created after removal of "ci-cd_section_01_ch_03_flow" from Study</description>
+        <accepts>ci-cd-section-01-ch-03-flow.html</accepts>
+    </rule>
 </rules>

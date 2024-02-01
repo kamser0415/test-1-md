@@ -76,10 +76,18 @@
             <toc-element topic="test-tddorder-sc4-01-POJO-상품-주문-구현-md.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="TDD-inflean.md">
+        <toc-element topic="tdd-test-section-00-OT.md"/>
+    </toc-element>
     <toc-element topic="CI-CD.md">
         <toc-element topic="Jenkins.md">
             <toc-element topic="section-01-DevOps와CI-CD의이해.md">
             </toc-element>
+            <toc-element topic="ci-cd-section-01-ch-01-devops.md"/>
+            <toc-element topic="ci-cd-section-01-ch-02-cicd.md"/>
+            <toc-element topic="ci-cd-section-01-ch-02-flow.md"/>
+            <toc-element topic="ci-cd-section-01-ch-04-tomcat.md"/>
+            <toc-element topic="ci-cd-section-01-ch-03-ansible.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>

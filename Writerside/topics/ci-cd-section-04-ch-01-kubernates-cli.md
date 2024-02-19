@@ -70,8 +70,22 @@ QoS Class:                   BestEffort
 Node-Selectors:              <none>
 Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
                              node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
-Events:                      <none> // 문제 원인을 확인 할 수 있는 부분
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  99s   default-scheduler  Successfully assigned default/sample-nginx to docker-desktop
+  Normal  Pulling    100s  kubelet            Pulling image "nginx"
+  Normal  Pulled     92s   kubelet            Successfully pulled image "nginx" in 7.22s (7.22s including waiting)
+  Normal  Created    92s   kubelet            Created container sample-nginx
+  Normal  Started    92s   kubelet            Started container sample-nginx
 ```   
+  
+Events
+: 이벤트 항목에서 문제가 생겼을 때, 어떤 이유로 Pods의 어떤 서비스가 실행이 안되었는지를 확인할 수 있습니다.  
+**현재 이벤트 항목은 마지막 성공 메세지를 확인하면 됩니다.**  
+1. 도커 데스크탑에서 관리하는 노드에 `sample-nginx` 라는 노드를 만듭니다.
+2. 필요한 `nginx`를 도커 허브에서 가져옵니다.
+3. 성공적으로 가져올 경우 컨테이너를 생성하고 동작합니다.
 
  
 파드 삭제
@@ -171,21 +185,52 @@ $ kubectl get pods -o=wide
 NAME                                READY   STATUS    RESTARTS   AGE   IP             NODE         NOMINATED NODE   READINESS GATES
 nginx-deployment-86dcfdf4c6-hcwq9   1/1     Running   0          18m   10.96.85.196   k8s-node01   <none>           <none>
 nginx-deployment-86dcfdf4c6-hzcdr   1/1     Running   0          18m   10.96.58.194   k8s-node02   <none>           <none>
-```  
-기본적으로 파드는 공평하게 각 노드에 분배됩니다.  
-특정한 노드에 지정을 하거나, 특정한 노드에 분배가 안되도록 설정도 가능합니다.  
+```
+ 
   
 해당 정보를 통해서 Pod도 마찬가지로 `exec -it` 커맨드로 접속할 수 있습니다.  
 ```Actionscript
 root@k8s-master:~# kubectl exec -it nginx-deployment-86dcfdf4c6-hzcdr -- /bin/bash
 root@nginx-deployment-86dcfdf4c6-hzcdr:/# 
-```    
+```      
+
+접속후 crul을 사용하여 웹서버 접속하기
+```Actionscript
+curl -X GET http://10.1.0.26
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+        :
+        :
+```
+파드 형태(최소 기능을 동작하기 위한 컨테이너 집합)로 작동되는 것은 내부 컨테이너로 사용하고 있기 때문에 
+이 상태를 우리가 사용하고 있는 호스트 PC에서 사용하려면 현재 파드가 사용하는 포트를 외부에서 사용할 수 있도록 
+서비스 형태로 오픈해야합니다.
 
 **Deployment 포트-포워딩하기**  
 ```Actionscript
 kubectl expose deployment nginx-deployment --port=80 --type=NodePort
 ```  
-service에 등록하는 방법은 cli로 작성하거나 스크립트 파일로도 작성할 수 있습니다.
+위 코드의 의미는 nginx-deployment에 속한 파드는 port는 80번으로 열고
+`kubectl get services` 결과에 나오는 외부 포트와 포트 포워딩을 하겠다는 의미입니다.
+```Actionscript
+kubectl expose deployment nginx-deployment --port=80 --type=NodePort
+service/nginx-deployment exposed
+
+kubectl get services
+NAME               TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes         ClusterIP   10.96.0.1        <none>        443/TCP        4d23h
+nginx-deployment   NodePort    10.108.227.152   <none>        80:32198/TCP   8s
+```  
+이렇게 되면 내부는 80번 포트와 외부 호스트OS의 32198포트와 포트포워딩이 되었습니다.  
+외부 호스트에서 `32198`로 접속하면 `nginx-deployment` pods의 80번 포트로 접속할 수 있습니다.
+
 **Service.yml**
 ```Actionscript
 apiVersion: v1
@@ -236,18 +281,72 @@ spec:
                                +--------------+
 ```
 
-nodePort
-: 클러스터의 각 노드에서 서비스에 접근하기 위한 포트입니다. 클러스터 외부에서 해당 포트로 접근하면 서비스로 트래픽이 전달됩니다.
-
-port
-: 서비스가 노출하는 포트입니다. 이 포트로 클러스터 내부에서 서비스에 접근할 수 있습니다.  
-  
-targetPort
-: 서비스가 연결하는 파드의 포트입니다. 서비스로 들어온 트래픽은 해당 파드의 이 포트로 전달됩니다.  
-  
 ```Actionscript
 root@k8s-master:~# kubectl get service
 NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 cicd-service   NodePort    10.109.200.43   <none>        8080:32000/TCP   33m
 ```  
 
+NodePort
+: 클러스터 외부에서 서비스에 접근하기 위한 포트입니다. 이 포트는 클러스터의 각 노드에서 열리며, 외부에서 접속할 때 사용됩니다.
+  
+
+targetPort
+: 이는 서비스가 백그라운드의 Pod에 트래픽을 포워딩할 때 사용되는 Pod 내부의 포트입니다. 즉, 서비스가 내부적으로 어떤 Pod에 연결할지를 결정할 때 사용됩니다.
+  
+
+서비스의 역할은 클러스터 내부에서 특정 Pod에 접근하는 것을 관리하고 추상화하는 것입니다. 서비스가 클러스터 내부에서 어떤 Pod에 트래픽을 보낼지 결정할 때는 각 Pod에 지정된 label selector를 기반으로 합니다.
+
+서비스 자체도 클러스터 내부에서 실행되는 Kubernetes 리소스이므로 포트를 할당받아야 합니다. 이 포트는 클러스터 내부에서 서비스에 접근할 때 사용됩니다. 따라서 이 예제에서는 서비스의 포트가 8080이며, 이는 서비스 자체의 포트입니다.
+
+그러므로 외부에서 클러스터에 접속할 때는 NodePort를 통해 접속하고, 내부적으로는 서비스의 포트(여기서는 8080)를 통해 해당 Pod의 targetPort(여기서는 8080)로 포워딩됩니다.
+
+```Actionscript
++---------------------+
+|    External Client  |
+|   (Outside Cluster) |
++----------+----------+
+           |
+           | (NodePort: 32000)
+           v
++----------+----------+
+|     Service         |
+|   (Port: 8080)      |
+|                     |
+|   (targetPort: 8080)|
++----------+----------+
+           |
+           | (Pod's 8080)
+           v
++----------+----------+
+|    Pod (Container)  |
+|   (Application)     |
+|   (Port: 8080)      |
++---------------------+
+```
+
+
+
+```Actionscript
+Name:                     cicd-service
+Namespace:                default
+Labels:                   app=cicd-devops-project
+Annotations:              <none>
+Selector:                 app=cicd-devops-project
+Type:                     NodePort
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.98.56.70
+IPs:                      10.98.56.70
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  32000/TCP
+Endpoints:                10.1.0.28:8080,10.1.0.29:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+```  
+정보
+:  
++ Selector는 서비스가 연결하고자 하는 배포(Deployment)를 의미합니다.  
++ Endpoint는 동적으로 pods의 ip가 변경되면 같이 변경됩니다  
+  

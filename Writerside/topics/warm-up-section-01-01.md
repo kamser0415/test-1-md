@@ -98,7 +98,7 @@ DELETE
 + 캐싱 가능: 응답이 캐시될 수 있는지 여부를 나타냅니다. GET 메소드는 캐싱 가능하지만, POST, PUT, DELETE 메소드는 캐싱되지 않습니다.
 + 요청 본문(Body): 요청 본문에 데이터를 포함하여 서버로 전송할 수 있습니다. POST, PUT, PATCH 메소드에서 주로 사용됩니다.
 
-### API
+### API(Application Program interface)
 API는 서버와 클라이언트 간의 상호작용을 위한 규칙을 정의합니다.  
 서버는 요청을 처리할 수 있는 인터페이스를 제공하고, 
 클라이언트는 이 인터페이스를 사용하여 요청을 보냅니다. 
@@ -169,4 +169,143 @@ public int addTwoNumbers(@ModelAttribute CalculatorAddRequest request) {
 ```  
 
 우리가 작성해야하는 HTTP 응답을 스프링부트가 알아서 정해진 규칙에 맞게 HTTP 응답을 만들고 
-BODY에 들어가는 내용만 작성하면됩니다.
+BODY에 들어가는 내용만 작성하면됩니다.  
+  
+
+## POST API 개발하고 테스트하기  
+HTTP에서는 데이터를 전달할 때 `Query`와 `Body`를 사용합니다.  
+
+쿼리를 이용하는 데이터 전달 방식은 `GET`만 사용하며, 
+`Body`를 사용하는 행위는 `POST,PUT,DELETE`가 됩니다.  
+  
+`BODY`에 데이터를 작성하는 문법중 하나는 `JSON`입니다.
+### JSON이란
+객체 표기법, 즉 무언가를 표현하기 위한 형식입니다.   
+```json
+{
+  "name": "John",
+  "age": 30,
+  "isStudent": true,
+  "hobbies": ["reading", "painting"],
+  "address": {"city": "New York", "zipcode": "10001"},
+  "middleName": null
+}
+
+```    
+  
+json은 java의 `Map<Object,Object>` 구조와 유사합니다.  
+값으로 다양한 타입이 들어올 수 있습니다. `String`,`int`,`List` 등이 들어올 수 있습니다.  
+   
+**곱셈 API를 만든다고 생각합니다.**  
+1. API Spec(`API 명세서`)를 정의합니다.
+   + HTTP Method
+   + HTTP Path
+   + HTTP Body(JSON)
+   + API의 응답 결과  
+  
+단순한 데이터를 받는 상황이기 때문에 `GET`을 사용하는 것이 맞습니다.  
+  
+1. HTTP Method -> `POST`
+2. HTTP Path -> `/multiply`
+3. HTTP Body(Json) -> `{ "num1": 5, "num2": 6 }`
+4. API의 반환결과 -> 곱셈결과  
+  
+```json
+POST http://localhost:8080/multiply
+Content-Type: application/json
+
+{
+  "num1": 5,
+  "num2": 15
+}
+```  
+요청에 필요한 모든 요소가 들어있습니다. HTTP ',HTTP Bdoy`  
+```Java
+@PostMapping("/multiply") // HTTP Method
+public int multiplyNumbers(@RequestBody CalculatorMultiplyRequest request) {
+    return request.getNum1() * request.getNum2();
+}
+```  
+그리고 Body에 데이터 형식이 `json`일 경우 스프링 부트에서 데이터 바인을 하려면 특정 애노테이션으로 프레임워크에게 알려줘야합니다.  
+  
+  
+## API 요구사항 먼저 확인  
+사용자  
++ 도서관의 사용자를 등록할 수 있다.(이름 필수,나이 선택)
++ 도서관 사용자의 목록을 볼 수 있다.
++ 도서관 사용자 이름을 업데이트 할 수 있다.
++ 도서관 사용자를 삭제할 수 있다.
+  
+책
++ 도서관에 책을 등록 및 삭제할 수 있다.
++ 사용자가 책을 빌릴 수 있다.
+  + 다른 사람이 그 책을 빌렸다면 빌릴 수 없습니다.
++ 사용자가 책을 반납할 수 있습니다.  
+    
+### 유저 등록
+마음대로 API를 만드는게 아니라 클라이언트와 서버의 약속이므로 먼저 작성합니다.  
+  
+예를 들어 API `Spec`을 정한다면 다음과 같습니다.  
+
+HTTP Method: Post
+HTTP Path: /user
+HTTP Body: (JSON)
+
+```JSON
+{
+  "name": String(null)불가능,
+  "age": Integer
+}
+```  
+  
+응답은 상태 코드와 헤더 , 바디가 중요하므로 확인해야합니다.  
+사용자 등록은 상태코드 200,헤더 기본, 바디는 없는 응답 객체를 내려줍니다.  
+  
+웹 관련 어노테이션이 클래스나 메서드에 호출이 되면 
+해당 URL로 진입시 해당 메서드가 매핑되어 호출됩니다.  
+  
+```java
+@PostMapping("/user")
+public void saveUser(@RequestBody UserCreateRequest request) {
+    users.add(new User(request.getName(),request.getAge()));
+}
+```  
+  
+### 유저 조회
+![image_92.png](image_92.png)  
+  
+스프링 부트는 HTTP 응답 객체를 대신 만들어줍니다.  
+반환값을 HTTP BODY에 사용자가 원하는 양식으로 작성을 해줍니다.  
+    
+1. 그래서 결과의 BODY를 보면 `List`형식이기 때문에 반환타입은 `List`가 되어야합니다.  
+2. 추가로 id를 요청했습니다. 요청 객체와 응답 객체는 별도로 관리하는 것이 불필요한 데이터 노출을 줄일 수 있습니다.  
+  
+## 정리
+   
+서버는 제공하다 + ER => 제공하는 것  
+  
+것이라는건 물건이라는 의미로 웹 서버는 웹 기능을 제공하는 것을 말한다.  
+기능을 제공하기 위해서는 다른 곳에서 서버에게 특정 행위와 함께 데이터를 가지고 요청을 해야한다.  
+  
+요청과 응답을 하기 위해서는 서로의 위치를 알아야하고 그것을 네트워크에서는 IP라고 합니다.  
+  
+그리고 IP는 인터넷이 연결된 컴퓨터를 말하며 컴퓨터 중에서 특정 프로그램에게 전달해야하기 때문에 
+포트라는 자세한 프로그램 위치까지 작성하게 됩니다.  
+  
+서로 IP:PORT를 가지게 되며 사용자가 편하게 사용하기 위해서 도메인 이름 시스템이라는
+DNS를 통해서 작성할 수 있습니다.  
+  
+택배를 보내기 위해서 정해진 규칙이 있듯이 서버에게 요청내용을 전달하기 위해서는 정해진 규칙이 있는데  
+그중 하나를 HTTP라고 합니다.  
+  
+HTTP는 요청과 응답이 있으며,  
+요청은 HTTP METHOD, HTTP HEADER, HTTP BODY가 3가지 요소이며
+응답은 HTTP STATUS CODE, HTTP HEADER, HTTP BODY로 3가지 요소입니다.  
+  
+요청시 데이터를 서버에 전달하는 방식은 쿼리와 바디를 사용할 수 있으며, 
+쿼리는 GET, 바디는 POST,PUT,DELETE HTTP METHOD가 사용합니다.  
+  
+쿼리는 URL에 &를 구분자로 KEY=VALUE를 통해서 데이터를 전달하며
+바디는 HTTP BODY에 작성되는 문자열 형식에 따라 다른 모습을 나타냅니다.  
+  
+

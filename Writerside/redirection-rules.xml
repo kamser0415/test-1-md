@@ -66,4 +66,12 @@
         <description>Created after removal of "ci-cd_section_01_ch_03_flow" from Study</description>
         <accepts>ci-cd-section-01-ch-03-flow.html</accepts>
     </rule>
+    <rule id="39e16eb7">
+        <description>Created after removal of "수업 준비" from Study</description>
+        <accepts>fullstack-park3-sc-03.html</accepts>
+    </rule>
+    <rule id="a4c258">
+        <description>Created after removal of "클라우드 서비스(AWS 서버 구축)" from Study</description>
+        <accepts>fullstack-park3-sc-02.html</accepts>
+    </rule>
 </rules>

@@ -74,4 +74,20 @@
         <description>Created after removal of "클라우드 서비스(AWS 서버 구축)" from Study</description>
         <accepts>fullstack-park3-sc-02.html</accepts>
     </rule>
+    <rule id="18fee1ed">
+        <description>Created after removal of "과제 1일차" from Study</description>
+        <accepts>warm-up-homework-01.html</accepts>
+    </rule>
+    <rule id="46145169">
+        <description>Created after removal of "과제 2일차" from Study</description>
+        <accepts>warm-up-homework-02.html</accepts>
+    </rule>
+    <rule id="4f8fd0b">
+        <description>Created after removal of "과제 3일차" from Study</description>
+        <accepts>warm-up-homework-03.html</accepts>
+    </rule>
+    <rule id="41d019ac">
+        <description>Created after removal of "warm-up-homework" from Study</description>
+        <accepts>warm-up-homework.html</accepts>
+    </rule>
 </rules>

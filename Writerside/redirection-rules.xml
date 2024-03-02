@@ -90,4 +90,28 @@
         <description>Created after removal of "warm-up-homework" from Study</description>
         <accepts>warm-up-homework.html</accepts>
     </rule>
+    <rule id="5252ddfa">
+        <description>Created after removal of "fullstack-park3-sc-06-0" from Study</description>
+        <accepts>fullstack-park3-sc-06-0.html</accepts>
+    </rule>
+    <rule id="2be00158">
+        <description>Created after removal of "fullstack-park3-sc-06-03" from Study</description>
+        <accepts>fullstack-park3-sc-06-03.html</accepts>
+    </rule>
+    <rule id="163dd9b1">
+        <description>Created after removal of "fullstack-park3-sc-06-04" from Study</description>
+        <accepts>fullstack-park3-sc-06-04.html</accepts>
+    </rule>
+    <rule id="3e671122">
+        <description>Created after removal of "fullstack-park3-sc-06-05" from Study</description>
+        <accepts>fullstack-park3-sc-06-05.html</accepts>
+    </rule>
+    <rule id="76c413c6">
+        <description>Created after removal of "fullstack-park3-sc-06-06" from Study</description>
+        <accepts>fullstack-park3-sc-06-06.html</accepts>
+    </rule>
+    <rule id="63c1bbb7">
+        <description>Created after removal of "fullstack-park3-sc-06-07" from Study</description>
+        <accepts>fullstack-park3-sc-06-07.html</accepts>
+    </rule>
 </rules>

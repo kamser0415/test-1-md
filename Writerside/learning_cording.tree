@@ -118,11 +118,11 @@
     </toc-element>
     <toc-element topic="inflean-warm-up-0.md">
         <toc-element topic="warm-up-section-01.md">
-            <toc-element topic="warm-up-section-04-01.md"/>
             <toc-element topic="warm-up-section-02-01.md"/>
             <toc-element topic="warm-up-section-01-01.md"/>
             <toc-element topic="warm-up-section-03-01.md">
             </toc-element>
+            <toc-element topic="warm-up-section-04-01.md"/>
             <toc-element topic="warm-up-section-03-02.md"/>
             <toc-element topic="warm-up-section-04-02.md"/>
             <toc-element topic="warm-up-section-05-01.md"/>

@@ -18,6 +18,7 @@
             <toc-element topic="knou-1-1경영학원론-04-기업인과-경영자.md"/>
             <toc-element topic="knou-1-1경영학원론-05-기업의-책임-및-윤리.md"/>
             <toc-element topic="knou-1-1경영학원론-06-경영환경.md"/>
+            <toc-element topic="knou-1-1경영학원론-07-글로벌경영.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="fullstack-park3-title.md">
@@ -132,6 +133,7 @@
     </toc-element>
     <toc-element topic="inflean-warm-up-0.md">
         <toc-element topic="warm-up-section-01.md">
+            <toc-element topic="warm-up-section-08-01.md"/>
             <toc-element topic="warm-up-section-06-01.md"/>
             <toc-element topic="warm-up-section-05-03.md"/>
             <toc-element topic="warm-up-section-02-01.md"/>

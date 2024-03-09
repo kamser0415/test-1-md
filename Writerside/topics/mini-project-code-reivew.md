@@ -254,4 +254,11 @@ RestApi스럽게 코드를 작성할 수 있는 장점이 있습니다.
 
 
 ![image_132.png](image_132.png)  
-  
+
+// LocalDate 월말을 가져오고 싶다, 월초를 가져오고 싶다.
+// TemperalAdJuster.firstInMonth
+
+절대적인 시간을 위해서 숫자로 저장하는 경우도 있다.
+
+// sealed class + 자바 21 switch patten maching
+// Cat,Dog

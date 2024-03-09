@@ -149,8 +149,8 @@
         </toc-element>
     </toc-element>
     <toc-element topic="warm-up-section-01-project.md">
+        <toc-element topic="delete.md"/>
         <toc-element topic="mini-project-code-reivew.md"/>
-        <toc-element topic="mini-codereview.md"/>
         <toc-element topic="mini-project-1step.md"/>
     </toc-element>
 </instance-profile>

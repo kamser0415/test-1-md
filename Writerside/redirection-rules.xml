@@ -114,4 +114,8 @@
         <description>Created after removal of "fullstack-park3-sc-06-07" from Study</description>
         <accepts>fullstack-park3-sc-06-07.html</accepts>
     </rule>
+    <rule id="695972ce">
+        <description>Created after removal of "코드 리뷰" from Study</description>
+        <accepts>mini-codereview.html</accepts>
+    </rule>
 </rules>

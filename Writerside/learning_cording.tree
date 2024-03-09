@@ -143,10 +143,14 @@
             <toc-element topic="warm-up-section-04-01.md"/>
             <toc-element topic="warm-up-section-03-02.md"/>
             <toc-element topic="warm-up-section-04-02.md"/>
-            <toc-element topic="warm-up-section-05-01.md"/>
+            <toc-element topic="warm-up-section-05-01.md">
+            </toc-element>
+            <toc-element topic="warm-up-section-05-01-스프링부트이모저모.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="warm-up-section-01-project.md">
+        <toc-element topic="mini-project-code-reivew.md"/>
+        <toc-element topic="mini-codereview.md"/>
         <toc-element topic="mini-project-1step.md"/>
     </toc-element>
 </instance-profile>

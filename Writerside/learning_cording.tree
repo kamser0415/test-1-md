@@ -13,6 +13,7 @@
         </toc-element>
         <toc-element topic="knou-1-1-파이썬-제목.md">
             <toc-element topic="1강-컴퓨터의-이해.md"/>
+            <toc-element topic="3강-파이썬의-이해.md"/>
         </toc-element>
         <toc-element topic="knou-1-1-경영학원론-제목.md">
             <toc-element topic="knou-1-1-경영학원론.md"/>
@@ -40,6 +41,7 @@
         <toc-element topic="fullstack-park3-sc-09.md"/>
         <toc-element topic="fullstack-park3-sc-10.md"/>
         <toc-element topic="fullstack-park3-sc-10-path.md"/>
+        <toc-element topic="fullstack-park3-sc-12-clone.md"/>
     </toc-element>
     <toc-element topic="TestCode.md">
         <toc-element topic="Practical-Testing.md">

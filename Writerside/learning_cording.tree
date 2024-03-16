@@ -42,6 +42,8 @@
         <toc-element topic="fullstack-park3-sc-10.md"/>
         <toc-element topic="fullstack-park3-sc-10-path.md"/>
         <toc-element topic="fullstack-park3-sc-12-clone.md"/>
+        <toc-element topic="fullstack-park3-sc-13-https-middle.md"/>
+        <toc-element topic="fullstack-park3-sc-14-https-renewal.md"/>
     </toc-element>
     <toc-element topic="TestCode.md">
         <toc-element topic="Practical-Testing.md">

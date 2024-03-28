@@ -6,11 +6,27 @@
                  name="Study"
                  start-page="intro1.md">
 
+    <toc-element topic="the-career.md">
+        <toc-element topic="tc-01-technical-05.md"/>
+    </toc-element>
+    <toc-element topic="F-Lab.md">
+        <toc-element topic="f-lab-before-studyway.md"/>
+        <toc-element topic="f-lab-before-godofjava.md">
+            <toc-element topic="godofjava-p3-배열.md"/>
+            <toc-element topic="godofjava-p3-변수.md"/>
+            <toc-element topic="godofjava-p1-02.md"/>
+            <toc-element topic="godofjava-p1-01.md"/>
+            <toc-element topic="godofjava-p3-객체지향언어.md"/>
+        </toc-element>
+        <toc-element topic="godofjava-p3-자료형.md"/>
+    </toc-element>
+    <toc-element topic="java-9-21.md"/>
     <toc-element topic="knou.md">
         <toc-element topic="knou-1-1-C프로그래밍-제목.md">
             <toc-element topic="knou-1-1-C프로그래밍-1.md"/>
             <toc-element topic="knou-1-1-C프로그래밍-2.md"/>
         </toc-element>
+        <toc-element topic="knou-1-1-글쓰기-제목.md"/>
         <toc-element topic="knou-1-1-파이썬-제목.md">
             <toc-element topic="1강-컴퓨터의-이해.md"/>
             <toc-element topic="3강-파이썬의-이해.md"/>

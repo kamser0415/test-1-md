@@ -11,7 +11,9 @@
   
 ## 정의 
 [Docker Compose 공식문서](https://docs.docker.com/compose/)  
-
+[Docker Compose 명령어 공식문서](https://docs.docker.com/compose/reference/)  
+[Docker V1 과 V2 차이점](https://docs.docker.com/compose/intro/history/)  
+ 
 **Docker Compose**는 멀티 컨테이너 애플리케이션을 정의하고 실행하는 도구입니다. 이는 간소화된 개발 및 배포 경험을 제공하는 열쇠 역할을 합니다.
 
 Compose는 전체 애플리케이션 스택의 제어를 단순화하여 서비스, 네트워크 및 볼륨을 하나의 이해하기 쉬운 YAML 구성 파일로 관리할 수 있게 해줍니다. 그런 다음 단일 명령으로 구성 파일에서 모든 서비스를 생성하고 시작할 수 있습니다.

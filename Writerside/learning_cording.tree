@@ -6,6 +6,7 @@
                  name="Study"
                  start-page="intro1.md">
 
+    <toc-element topic="MultiThread.md"/>
     <toc-element topic="the-career.md">
         <toc-element topic="tc-01-technical-05.md"/>
     </toc-element>

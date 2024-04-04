@@ -12,6 +12,10 @@
         <toc-element topic="Context-switching.md"/>
         <toc-element topic="Mutual-Exclusion-배타제어.md"/>
     </toc-element>
+    <toc-element topic="Event.md">
+        <toc-element topic="Kafka.md"/>
+    </toc-element>
+    <toc-element topic="RaceCondition-Solution.md"/>
     <toc-element topic="the-career.md">
         <toc-element topic="tc-01-technical-05.md"/>
     </toc-element>

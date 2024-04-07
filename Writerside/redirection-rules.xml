@@ -118,4 +118,20 @@
         <description>Created after removal of "코드 리뷰" from Study</description>
         <accepts>mini-codereview.html</accepts>
     </rule>
+    <rule id="51ef1c7a">
+        <description>Created after removal of "Reference" from Study</description>
+        <accepts>Reference.html</accepts>
+    </rule>
+    <rule id="5fa63ff5">
+        <description>Created after removal of "Overview" from Study</description>
+        <accepts>Overview.html</accepts>
+    </rule>
+    <rule id="75a35839">
+        <description>Created after removal of "Tutorial" from Study</description>
+        <accepts>Tutorial.html</accepts>
+    </rule>
+    <rule id="bc5c049">
+        <description>Created after removal of "Starter" from Study</description>
+        <accepts>Starter.html</accepts>
+    </rule>
 </rules>

@@ -1,4 +1,4 @@
-# RaceCondition-Solution
+# RaceCondition-Solution 첫번째
 
 ## 정의
 경합 상태는 둘 이상의 스레드가 공유 데이터에 액세스할 수 있고 동시에 공유 데이터를 변경하려고 할 때 발생합니다. 

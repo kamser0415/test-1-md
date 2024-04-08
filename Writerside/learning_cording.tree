@@ -7,6 +7,7 @@
                  start-page="intro1.md">
 
     <toc-element topic="MultiThread.md">
+        <toc-element topic="GuardedSuspension.md"/>
         <toc-element topic="Blocking-Non-Blocking.md"/>
         <toc-element topic="CPU-optimizer.md"/>
         <toc-element topic="Context-switching.md"/>

@@ -21,8 +21,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ssh-key: ${{ secrets.SSH }}
+      - run: ssh -vT git@github.com
 
       - name: Build docs using Writerside Docker builder
         uses: JetBrains/writerside-github-action@v4

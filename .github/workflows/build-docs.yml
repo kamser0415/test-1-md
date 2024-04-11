@@ -22,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ssh-key: ${{ GITHUB_SSH }}
+          ssh-key: ${{ secrets.SSH }}
 
       - name: Build docs using Writerside Docker builder
         uses: JetBrains/writerside-github-action@v4

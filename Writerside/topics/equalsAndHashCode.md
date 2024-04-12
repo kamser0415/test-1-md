@@ -39,4 +39,5 @@ if (p.hash == hash &&
                 ((k = p.key) == key || (key != null && key.equals(k))))
 ```  
   
-따라서 자바에서는 hashCode와 equals의 결과는 동일해야합니다.
+따라서 자바에서는 hashCode와 equals의 결과는 동일해야합니다.  
+정리하면 논리적인 객체 비교를 원활하게 하기 위해서 필요합니다.

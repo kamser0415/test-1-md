@@ -2,9 +2,3 @@
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
-<instance-profile id="section_1"
-                 name="테스트는 왜 필요할까?"
-                  start-page="0-test-need-md.md">
-
-    <toc-element topic="0-test-need-md.md"/>
-</instance-profile>

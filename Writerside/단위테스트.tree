@@ -2,14 +2,3 @@
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
-<instance-profile id="단위테스트"
-                 name="단위테스트"
-                 start-page="단위테스트.md">
-
-    <toc-element topic="단위테스트.md">
-    </toc-element>
-    <toc-element topic="Junit로-테스트하기.md"/>
-    <toc-element topic="테스트케이스세분화하기.md"/>
-    <toc-element topic="중요-테스트하기-어려운-영역을-분리하기.md"/>
-    <toc-element topic="키워드정리.md"/>
-</instance-profile>

@@ -2,12 +2,3 @@
 <!DOCTYPE instance-profile
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
-<instance-profile id="test_black"
-                 name="테스트는[]다"
-                 start-page="테스트는-다.md">
-
-    <toc-element topic="테스트는-다.md"/>
-    <toc-element topic="2-DisplayName을섬세하게.md"/>
-    <toc-element topic="BDD-스타일로-작성하기.md"/>
-    <toc-element topic="BDD-키워드-정리.md"/>
-</instance-profile>

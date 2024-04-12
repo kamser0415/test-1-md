@@ -24,7 +24,8 @@
     <toc-element topic="F-Lab.md">
         <toc-element topic="f-lab-before-studyway.md"/>
         <toc-element topic="f-lab-before-godofjava.md">
-            <toc-element topic="Collection-SET-Queue.md"/>
+            <toc-element topic="Collection-Queue.md"/>
+            <toc-element topic="Collection-SET.md"/>
             <toc-element topic="Collection-Basic.md"/>
             <toc-element topic="Collection-List.md"/>
             <toc-element topic="Generic.md"/>

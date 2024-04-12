@@ -91,3 +91,23 @@ Stack 클래스 전용 메서드
    
 .. 그외 다양한 자료구조 메서드를 제공합니다.  
   
+## 주의사항  
+컬렉션을 사용하는 이유는 데이터를 저장할 때 크기를 신경쓰지 않아도 된다는 것인데 
+데이터의 맨 앞에 있는 내용을 삭제하면 순서를 지키키위해 아래 로직이 실행됩니다.
+```Java
+final int newSize;
+if ((newSize = size - 1) > i)
+    System.arraycopy(es, i + 1, es, i, newSize - i);
+es[size = newSize] = null;
+```  
++ `i`는 삭제하려는 인덱스
++ `size`는 현재 데이터 갯수  
+    
+List에 데이터가 5개 저장되어있으면 마지막 인덱스는 4가 됩니다.  
++ remove(lastIdx)
+  + 5(`size`) - 1 > 4(`i`) = false
+  + `list[4]` = null 으로 마무리
++ 그외 (첫번째 인덱스를 지운다면)
+  + 5(`size`) - 1 > 0 (`i`) = true
+  + System.arraycopy(es, i + 1, es, i, newSize - i)
+  + 얕은 복사로 기존 배열에 한칸씩 당기는 작업이 실행됩니다.

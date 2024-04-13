@@ -1,3 +1,0 @@
-# Event
-
-Start typing here...

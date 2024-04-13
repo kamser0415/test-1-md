@@ -134,4 +134,8 @@
         <description>Created after removal of "Starter" from Study</description>
         <accepts>Starter.html</accepts>
     </rule>
+    <rule id="3ef525b6">
+        <description>Created after removal of "java-9-21" from Study</description>
+        <accepts>java-9-21.html</accepts>
+    </rule>
 </rules>

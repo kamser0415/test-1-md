@@ -24,12 +24,14 @@
     <toc-element topic="F-Lab.md">
         <toc-element topic="f-lab-before-studyway.md"/>
         <toc-element topic="f-lab-before-godofjava.md">
-            <toc-element topic="equalsAndHashCode.md"/>
             <toc-element topic="godofjava-p3-자료형.md"/>
-            <toc-element topic="Collection-Queue.md"/>
-            <toc-element topic="Collection-SET.md"/>
+            <toc-element topic="equalsAndHashCode.md"/>
             <toc-element topic="Collection-Basic.md"/>
             <toc-element topic="Collection-List.md"/>
+            <toc-element topic="Collection-SET.md"/>
+            <toc-element topic="Collection-Queue.md">
+            </toc-element>
+            <toc-element topic="Collection-Map.md"/>
             <toc-element topic="Generic.md"/>
             <toc-element topic="godofjava-p3-배열.md"/>
             <toc-element topic="godofjava-p3-변수.md"/>

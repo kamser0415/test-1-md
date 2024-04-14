@@ -133,7 +133,24 @@ Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 Build-Jdk-Spec: 17
 Implementation-Title: stock_rt_1
 Implementation-Version: 0.0.1-SNAPSHOT
-```  
+``` 
+  
+`Main-Class`에는 등록하지 않은 클래스가 추가되어있고, 
+`Start-Class`에는 개발자가 작성한 `main()` 클래스가 작성되어있습니다.  
+  
+스프링 부트는 `war`파일처럼 `BOOT-INF` 동일한 구조를 만들고 외부 라이브러리 `jar`를 읽어드립니다.  
+저장된 `jar`파일을 읽고 난 후에 `Start-Class`에 있는 `main()` 클래스를 호출하는 방식을 사용합니다.  
+
+### 실행과정  
+1. java -jar xxx.jar 실행
+2. MANIFEST.MF 인식
+3. `Main-Class`인 `JarLauncher`의 `main()` 실행
+4. `/BOOT-INF/classes/`인식
+5. `/BOOT-INF/lib/`인식
+6. `StockRt1Application.main()` 실행  
+  
+실행을 `java -jar`가 아니라 `IDE`로 실행할 경우에는 `StockRt1Application.main()`인 개발자 코드를 바로 실행합니다. 
+`IDE`가 필요한 라이브러리를 인식할 수 있게 도와주기 때문에 별도의 `JarLauncher`가 필요 없습니다.
   
 ## 정리  
 war 파일은 이미 서버에 WAS가 구성되어 웹 응용 프로그램만 배포할 때 사용합니다. 

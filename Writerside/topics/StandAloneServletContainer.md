@@ -1,4 +1,4 @@
-# ServletContainer
+# 독립형-ServletContainer
 
 참고 자료: [서블릿 컨테이너의 이해](https://yangbongsoo.gitbook.io/study/servlet_container)  
   

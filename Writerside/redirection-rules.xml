@@ -138,4 +138,8 @@
         <description>Created after removal of "java-9-21" from Study</description>
         <accepts>java-9-21.html</accepts>
     </rule>
+    <rule id="7e5bd198">
+        <description>Created after removal of "JAR" from Study</description>
+        <accepts>JAR.html</accepts>
+    </rule>
 </rules>

@@ -118,3 +118,4 @@ try {
   
 예외를 발생키시는 이유는 예외 처리를 명시적으로 할수 있습니다.  
   
+[모니터 락 정리]((https://tarunjain07.medium.com/java-monitor-notes-40ff746dfec3))

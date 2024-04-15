@@ -35,6 +35,7 @@
             <toc-element topic="Collection-Queue.md">
             </toc-element>
             <toc-element topic="Collection-Map.md"/>
+            <toc-element topic="Java-Thread.md"/>
             <toc-element topic="Generic.md"/>
             <toc-element topic="godofjava-p3-배열.md"/>
             <toc-element topic="godofjava-p3-변수.md"/>

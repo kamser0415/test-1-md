@@ -26,7 +26,6 @@
 그래서 Google Protobuf나 Apache Avro를 사용하여 공통 패킷 모듈을 만들 수 있습니다.  
 HTTP 통신으로 Json도 가능하지만 필드 추가나 오타로 인한 경우 원인 찾기도 어렵습니다.  
 
-  
 ## Thread  
 ![image_153.png](image_153.png)  
   

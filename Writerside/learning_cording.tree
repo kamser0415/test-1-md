@@ -17,6 +17,7 @@
         <toc-element topic="GuardedSuspension.md"/>
         <toc-element topic="MutiThread-Balking.md"/>
         <toc-element topic="Producer-Consumer.md"/>
+        <toc-element topic="MultiThread-Read-Write-Lock.md"/>
     </toc-element>
     <toc-element topic="EventBroker.md">
         <toc-element topic="Kafka.md"/>

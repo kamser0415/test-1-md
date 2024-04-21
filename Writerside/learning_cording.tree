@@ -197,6 +197,7 @@
         <toc-element topic="SpringBoot-Run.md"/>
         <toc-element topic="SpringBoot-LibraryManager.md"/>
         <toc-element topic="Springboot-AutoConfiguration.md"/>
+        <toc-element topic="SpringBoot-Properties.md"/>
     </toc-element>
     <toc-element topic="inflean-warm-up-0.md">
         <toc-element topic="warm-up-section-01.md">

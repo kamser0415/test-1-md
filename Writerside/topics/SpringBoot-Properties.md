@@ -184,7 +184,44 @@ passowrd=1234
 spring.config.activate.on-profile=dev
 database=mysql
 ```  
-이렇게 작성되어있고 `-Dspring.profiles.active=dev`으로 실행한다면 `database`의 속성값만 변경됩니다.  
+이렇게 작성되어있고 `-Dspring.profiles.active=dev`으로 실행한다면 `database`의 속성값만 변경됩니다.
+
+### YAML  
++ `.properties`와 다르게 계층 구조로 개발자가 읽기 좋게 작성할 수 있습니다.  
++ 하나의 `yml`파일은 `---`으로 구분할 수 있습니다.  
++ `yaml`파일은 공백으로 계층을 만듭니다 보통 2칸을 사용합니다.  
+
+```Java
+my:
+  datasource:
+    url: local.db.com
+    username: local_user
+    password: local_pw
+    etc:
+      max-connection: 1
+      timeout: 60s
+      options:
+        - LOCAL
+        - CACHE
+        - NON
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+my:
+  datasource:
+    url: dev.db.com
+    username: dev_user
+    password: dev_pw
+    etc:
+      max-connection: 10
+      timeout: 60s
+      options:
+        - DEV
+        - CACHE
+```
   
 ## 속성 추상화  
 ![image_193.png](image_193.png)  
@@ -202,7 +239,7 @@ database=mysql
 + OS 환경변수
 + 자바 시스템 속성 (`-Dusername=`)
 + 커맨드라인 옵션인수 (`--username=`)
-+ `@TestPropoertiesSource` 테스트 사용
++ `@TestPropoertiesSource` 테스트 사용  
   
 ### 설정 데이터파일 우선순위
 + jar 내부 application.properties

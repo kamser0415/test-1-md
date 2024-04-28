@@ -405,6 +405,7 @@ public class InMemoryHttpExchangeRepositoryConfig {
 기능이 단순하고, 제한이 많기 때문에 개발 단계에서 사용합니다.  
 실제 운영 서비스에서는 모니터링 툴인 네이버의 핀포인트나 Zipkin 같은 다른 기술을 사용하는 것을 권장합니다.  
   
+[pinpoint APM 공식 문서](https://pinpoint-apm.gitbook.io/pinpoint/getting-started/installation)
   
 ## 엑츄에이터와 보안  
 **HTTP** 를 통해서 엑츄에이터 기능이 활성화된 애플리케이션의 내부 정보를 많이 노출할 수 있습니다. 

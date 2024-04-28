@@ -4,8 +4,9 @@
 
 <instance-profile id="learning_cording"
                  name="Study"
-                 start-page="intro1.md">
+                 start-page="schedule.md">
 
+    <toc-element topic="schedule.md"/>
     <toc-element topic="MultiThread.md">
         <toc-element topic="RaceCondition-Solution-2nd.md"/>
         <toc-element topic="RaceCondition-Solution-1st.md"/>

@@ -1,10 +1,18 @@
 # @Profile  
   
 외부 설정 파일을 조회할 때 `Environment`를 사용합니다.  
-`SpringApplication.run()`을 호출하게 되면 `Environment`는 다음과 같은 필드를 갖습니다.  
+애플리케이션을 시작할때 `SpringApplication.run()`을 호출하게 되고 `Environment`는 다음과 같은 필드를 갖습니다.  
   
 ![image_198.png](image_198.png)
   
+## Profile이란
+스프링은 애플리케이션 구성의 일부인 빈을 분리하여 등록할 수 있는 방법을 제공합니다. 
+특정 환경에서만 사용할 수 있도록 하는 것이 목적이며, `@Component`나 `@Configuration`등과 같이 빈 등록시
+`@Profiles`를 통해 제한할 수 있습니다.   
+  
+제한하는 방법은 `spring.profiles.active`프로퍼티 값의 활성 프로필 작성합니다. 
+예를 들면 `spring.profiles.active=dev,hsqldb`나 커맨드라인 인수 옵션인 `--spring.profiles.active=dev,hsqldb`로 설정합니다.
+
 ```Java
 @Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

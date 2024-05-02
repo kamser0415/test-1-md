@@ -11,7 +11,11 @@
 `@Profiles`를 통해 제한할 수 있습니다.   
   
 제한하는 방법은 `spring.profiles.active`프로퍼티 값의 활성 프로필 작성합니다. 
-예를 들면 `spring.profiles.active=dev,hsqldb`나 커맨드라인 인수 옵션인 `--spring.profiles.active=dev,hsqldb`로 설정합니다.
+예를 들면 `spring.profiles.active=dev,hsqldb`나 커맨드라인 인수 옵션인 `--spring.profiles.active=dev,hsqldb`로 설정합니다.  
+  
+## 동작 원리  
+  
+내부에서는 `@Conditional`을 통해 활성 프로필과 일치하는지 확인후 등록합니다.
 
 ```Java
 @Target({ElementType.TYPE, ElementType.METHOD})

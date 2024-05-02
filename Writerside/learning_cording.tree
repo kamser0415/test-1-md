@@ -57,6 +57,9 @@
             <toc-element topic="godofjava-p1-02.md"/>
             <toc-element topic="Java-IO.md"/>
         </toc-element>
+        <toc-element topic="AI-mento-31day.md">
+            <toc-element topic="ai-equals-hashcode.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="knou.md">
         <toc-element topic="knou-1-1-C프로그래밍-제목.md">

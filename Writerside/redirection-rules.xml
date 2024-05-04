@@ -142,4 +142,8 @@
         <description>Created after removal of "JAR" from Study</description>
         <accepts>JAR.html</accepts>
     </rule>
+    <rule id="13774abe">
+        <description>Created after removal of "Library" from Study</description>
+        <accepts>Library.html</accepts>
+    </rule>
 </rules>

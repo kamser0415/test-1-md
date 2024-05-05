@@ -219,6 +219,7 @@
         <toc-element topic="SpringBoot-Actuator.md"/>
         <toc-element topic="Spring-Boot-Micrometer.md"/>
         <toc-element topic="SpringBoot-Monitoring.md">
+            <toc-element topic="Monitoring-Tip.md"/>
             <toc-element topic="Prometheus.md"/>
             <toc-element topic="Grafana.md">
             </toc-element>

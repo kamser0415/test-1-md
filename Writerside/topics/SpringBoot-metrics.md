@@ -336,7 +336,100 @@ public class TimedAspectConfig {
 }
 ```  
   
-## 구현방식
+## 구현방식 비교
 프로그래밍식으로 작성할 경우 비즈니스 로직에 추가되어 `AOP`를 통해 관심사를 분리할 수 있습니다.  
 메서드나 클래스 단위가 아닌 특정 구역에 대한 메트릭을 기록하고 싶을때에는 프로그래밍식을 사용할 수 있습니다.  
   
+## Gauge(게이지)
+게이지는 임의로 상하로 움직일 수 있는 단일 숫자 값을 나타내는 메트릭입니다.  
++ 메트릭 측정 대상의 상태를 숫자로 확인 할 수 있습니다.
++ 값이 증가하거나 감소할 수 있음
++ 예) CPU 사용량, 메모리 사용량, 커넥션 수  
+    
+### 프로그래밍 방식
+게이지를 활용하는 방법은 선언적 방식이 없습니다.  
+사용 방법은 `MeterRegistry`에 등록할 마이크로미터 `Gauge`를 등록합니다. 
+`name`과 `tag`를 추가하고 마이크로미터에서 `name`으로 조회할 경우 게이지로 측정할 메트릭 값을 반환하면 됩니다.  
+
+[커스텀 메트릭 등록](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.metrics.registering-custom)  
+  
+**컴포넌트에서 `MeterRegistry`를 주입받아 사용하는 방법**
+```Java
+@Slf4j
+@Service
+public class OrderServiceV5 implements OrderService {
+
+    private AtomicInteger stock = new AtomicInteger(100);
+
+    public OrderServiceV5(MeterRegistry meterRegistry) {
+        meterRegistry.gauge("my.stock",
+                Tags.of("class", this.getClass().getName(),
+                        "method", "stock"), this,
+                service -> {
+                    log.info("custom gauge");
+                    return this.getStock().get();
+                });
+    }
+    
+    public AtomicInteger getStock() {
+        return stock;
+    }
+}
+```  
+  
+**MeterBinder 사용**
+```Java
+@Slf4j
+@Configuration
+public class StockMetricsConfig {
+
+    private final String PREFIX = "my.";
+
+    @Bean
+    public MeterBinder queueSize(OrderServiceV0 orderServiceV0) {
+        return (registry) -> Gauge.builder(PREFIX+"stock",
+                        orderServiceV0::getStock)
+                .register(registry);
+    }
+}
+```  
+#### MeterBinder 장점
+1. `MeterBinder`를 사용하면 올바른 종속관계가 설정되며, 메트릭 값이 검색될때 빈이 사용되도록 보장합니다.
+2. `MeterBinder`를 활용하면 여러 구성요소나애플리케이션 간에 반복적으로 등록해야하는 경우 활용할 수있습니다.  
+  
+```Java
+@Component
+public class CustomOrderMeterBinder implements MeterBinder {
+
+    private final Tags tag;
+    private final OrderService orderService;
+
+    public CustomOrderMeterBinder(OrderService orderService) {
+        this.tag = Tags.of("class", this.getClass().getName());
+        this.orderService = orderService;
+    }
+
+    @Override
+    public void bindTo(MeterRegistry registry) {
+        Gauge.builder("my.stock", orderService,
+                        service -> service.getStock().get())
+                .tags(tag).description("주문 재고수량")
+                .register(registry);
+        Gauge.builder("my.stock1", orderService,
+                        service -> service.getStock().get())
+                .tags(tag).description("주문 재고수량1")
+                .register(registry);
+        Gauge.builder("my.stock2", orderService,
+                        service -> service.getStock().get())
+                .tags(tag).description("주문 재고수량2")
+                .register(registry);
+        Gauge.builder("my.stock3", orderService,
+                        service -> service.getStock().get())
+                .tags(tag).description("주문 재고수량3")
+                .register(registry);
+    }
+}
+```  
+
+## 정리
+메트릭은 100% 정확한 숫자를 보는데 사용하는 것이아닙니다. 

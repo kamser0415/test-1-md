@@ -106,8 +106,6 @@ public class MemberDto {
 ## 오버로딩  
 동일한 역할을 하는 메소드가 매개변수의 갯수, 순서, 자료형이 다를 경우 하나의 메소드 명을 사용할 수 있는 것을 오버로딩이라한다.  
   
-## 
-
 [String Pool](https://www.baeldung.com/java-string-pool)  
   
 자바 7버전 이후 부터는 `String Pool`이 힙 영역에 관리가 되기 때문에 가비지 컬렉터 대상이 되어 메모리 부족 현상을 줄일 수 있습니다.  

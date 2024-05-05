@@ -220,7 +220,9 @@
         <toc-element topic="Spring-Boot-Micrometer.md"/>
         <toc-element topic="SpringBoot-Monitoring.md">
             <toc-element topic="Prometheus.md"/>
-            <toc-element topic="Grafana.md"/>
+            <toc-element topic="Grafana.md">
+            </toc-element>
+            <toc-element topic="SpringBoot-metrics.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="inflean-warm-up-0.md">
